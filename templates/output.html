@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Recommendations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-2xl w-full animate__animated animate__fadeIn">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Your Book Recommendations</h1>
+        <div class="space-y-4">
+            {% for book in recommendations %}
+                <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                    <p class="font-medium text-lg text-gray-800">{{ book.title }}</p>
+                    <p class="text-sm text-gray-600">Author: {{ book.author }}</p>
+                    <p class="text-sm text-gray-600">Publisher: {{ book.publisher }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/input" class="block mt-6 text-center bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105 animate__animated animate__fadeInUp animate__delay-2s">Try Another Search</a>
+    </div>
+</body>
+</html>
